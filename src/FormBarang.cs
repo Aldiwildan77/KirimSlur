@@ -47,6 +47,10 @@ namespace src
                 refresh();
                 databaseConnection.Close();
             }
+
+            tbBerat.Text = "";
+            tbNama.Text = "";
+            tbJenis.Text = "";
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

@@ -84,6 +84,7 @@
             this.statusPengirimanToolStripMenuItem.Name = "statusPengirimanToolStripMenuItem";
             this.statusPengirimanToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
             this.statusPengirimanToolStripMenuItem.Text = "Status Pengiriman";
+            this.statusPengirimanToolStripMenuItem.Visible = false;
             this.statusPengirimanToolStripMenuItem.Click += new System.EventHandler(this.statusPengirimanToolStripMenuItem_Click);
             // 
             // Main

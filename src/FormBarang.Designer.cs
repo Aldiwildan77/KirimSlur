@@ -32,6 +32,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnTambah = new System.Windows.Forms.Button();
             this.listBarang = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,17 +42,16 @@
             this.lbJenis = new System.Windows.Forms.Label();
             this.lbBerat = new System.Windows.Forms.Label();
             this.lbNamaBarang = new System.Windows.Forms.Label();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbIdBarang = new System.Windows.Forms.TextBox();
             this.lbIdBarang = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnHapus
             // 
-            this.btnHapus.Location = new System.Drawing.Point(333, 315);
-            this.btnHapus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnHapus.Location = new System.Drawing.Point(166, 164);
+            this.btnHapus.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(112, 46);
+            this.btnHapus.Size = new System.Drawing.Size(56, 24);
             this.btnHapus.TabIndex = 19;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = true;
@@ -59,10 +59,10 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(189, 315);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdate.Location = new System.Drawing.Point(94, 164);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(112, 46);
+            this.btnUpdate.Size = new System.Drawing.Size(56, 24);
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -70,10 +70,10 @@
             // 
             // btnTambah
             // 
-            this.btnTambah.Location = new System.Drawing.Point(51, 315);
-            this.btnTambah.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTambah.Location = new System.Drawing.Point(26, 164);
+            this.btnTambah.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(112, 46);
+            this.btnTambah.Size = new System.Drawing.Size(56, 24);
             this.btnTambah.TabIndex = 17;
             this.btnTambah.Text = "Tambah";
             this.btnTambah.UseVisualStyleBackColor = true;
@@ -86,15 +86,21 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.listBarang.FullRowSelect = true;
             this.listBarang.HideSelection = false;
-            this.listBarang.Location = new System.Drawing.Point(486, 39);
-            this.listBarang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBarang.Location = new System.Drawing.Point(243, 20);
+            this.listBarang.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.listBarang.Name = "listBarang";
-            this.listBarang.Size = new System.Drawing.Size(644, 366);
+            this.listBarang.Size = new System.Drawing.Size(324, 192);
             this.listBarang.TabIndex = 16;
             this.listBarang.UseCompatibleStateImageBehavior = false;
             this.listBarang.View = System.Windows.Forms.View.Details;
             this.listBarang.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBarang_MouseClick);
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "ID Barang";
+            this.columnHeader4.Width = 129;
             // 
             // columnHeader1
             // 
@@ -113,87 +119,82 @@
             // 
             // tbJenis
             // 
-            this.tbJenis.Location = new System.Drawing.Point(177, 201);
-            this.tbJenis.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbJenis.Location = new System.Drawing.Point(88, 105);
+            this.tbJenis.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbJenis.Name = "tbJenis";
-            this.tbJenis.Size = new System.Drawing.Size(292, 31);
+            this.tbJenis.Size = new System.Drawing.Size(148, 20);
             this.tbJenis.TabIndex = 15;
             // 
             // tbBerat
             // 
-            this.tbBerat.Location = new System.Drawing.Point(177, 146);
-            this.tbBerat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbBerat.Location = new System.Drawing.Point(88, 76);
+            this.tbBerat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbBerat.Name = "tbBerat";
-            this.tbBerat.Size = new System.Drawing.Size(292, 31);
+            this.tbBerat.Size = new System.Drawing.Size(148, 20);
             this.tbBerat.TabIndex = 14;
             // 
             // tbNama
             // 
-            this.tbNama.Location = new System.Drawing.Point(177, 92);
-            this.tbNama.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbNama.Location = new System.Drawing.Point(88, 48);
+            this.tbNama.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbNama.Name = "tbNama";
-            this.tbNama.Size = new System.Drawing.Size(292, 31);
+            this.tbNama.Size = new System.Drawing.Size(148, 20);
             this.tbNama.TabIndex = 13;
             // 
             // lbJenis
             // 
             this.lbJenis.AutoSize = true;
-            this.lbJenis.Location = new System.Drawing.Point(15, 204);
-            this.lbJenis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbJenis.Location = new System.Drawing.Point(8, 106);
+            this.lbJenis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbJenis.Name = "lbJenis";
-            this.lbJenis.Size = new System.Drawing.Size(138, 25);
+            this.lbJenis.Size = new System.Drawing.Size(68, 13);
             this.lbJenis.TabIndex = 12;
             this.lbJenis.Text = "Jenis Barang";
             // 
             // lbBerat
             // 
             this.lbBerat.AutoSize = true;
-            this.lbBerat.Location = new System.Drawing.Point(15, 149);
-            this.lbBerat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbBerat.Location = new System.Drawing.Point(8, 77);
+            this.lbBerat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBerat.Name = "lbBerat";
-            this.lbBerat.Size = new System.Drawing.Size(138, 25);
+            this.lbBerat.Size = new System.Drawing.Size(69, 13);
             this.lbBerat.TabIndex = 11;
             this.lbBerat.Text = "Berat Barang";
             // 
             // lbNamaBarang
             // 
             this.lbNamaBarang.AutoSize = true;
-            this.lbNamaBarang.Location = new System.Drawing.Point(10, 95);
-            this.lbNamaBarang.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNamaBarang.Location = new System.Drawing.Point(5, 49);
+            this.lbNamaBarang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNamaBarang.Name = "lbNamaBarang";
-            this.lbNamaBarang.Size = new System.Drawing.Size(143, 25);
+            this.lbNamaBarang.Size = new System.Drawing.Size(72, 13);
             this.lbNamaBarang.TabIndex = 10;
             this.lbNamaBarang.Text = "Nama Barang";
             // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "ID Barang";
-            this.columnHeader4.Width = 129;
-            // 
             // tbIdBarang
             // 
-            this.tbIdBarang.Location = new System.Drawing.Point(177, 39);
-            this.tbIdBarang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbIdBarang.Location = new System.Drawing.Point(88, 20);
+            this.tbIdBarang.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbIdBarang.Name = "tbIdBarang";
             this.tbIdBarang.ReadOnly = true;
-            this.tbIdBarang.Size = new System.Drawing.Size(292, 31);
+            this.tbIdBarang.Size = new System.Drawing.Size(148, 20);
             this.tbIdBarang.TabIndex = 21;
             // 
             // lbIdBarang
             // 
             this.lbIdBarang.AutoSize = true;
-            this.lbIdBarang.Location = new System.Drawing.Point(46, 42);
-            this.lbIdBarang.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbIdBarang.Location = new System.Drawing.Point(23, 22);
+            this.lbIdBarang.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbIdBarang.Name = "lbIdBarang";
-            this.lbIdBarang.Size = new System.Drawing.Size(107, 25);
+            this.lbIdBarang.Size = new System.Drawing.Size(55, 13);
             this.lbIdBarang.TabIndex = 20;
             this.lbIdBarang.Text = "ID Barang";
             // 
             // FormBarang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 466);
+            this.ClientSize = new System.Drawing.Size(600, 242);
             this.Controls.Add(this.tbIdBarang);
             this.Controls.Add(this.lbIdBarang);
             this.Controls.Add(this.btnHapus);
@@ -206,7 +207,7 @@
             this.Controls.Add(this.lbJenis);
             this.Controls.Add(this.lbBerat);
             this.Controls.Add(this.lbNamaBarang);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "FormBarang";
             this.Text = "FormBarang";
             this.Load += new System.EventHandler(this.FormBarang_Load);
