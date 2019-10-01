@@ -237,10 +237,10 @@ namespace src
             cbPenerima.Text = listPengiriman.Items[listPengiriman.FocusedItem.Index].SubItems[3].Text;
             cbBarang.Text = listPengiriman.Items[listPengiriman.FocusedItem.Index].SubItems[4].Text;
             cbKurir.Text = listPengiriman.Items[listPengiriman.FocusedItem.Index].SubItems[5].Text;
-            tbTotal.Text = listPengiriman.Items[listPengiriman.FocusedItem.Index].SubItems[6].Text;
+            tbTotal.Text = listPengiriman.Items[listPengiriman.FocusedItem.Index].SubItems[7].Text;
 
-            string kategori = listPengiriman.Items[listPengiriman.FocusedItem.Index].SubItems[7].Text;
-            if(kategori.Equals("pengirim"))
+            string kategori = listPengiriman.Items[listPengiriman.FocusedItem.Index].SubItems[6].Text;
+            if(kategori.Equals("Express"))
             {
                 rbExpress.Checked = true;
             } else
@@ -295,6 +295,7 @@ namespace src
                 cmd.Parameters.AddWithValue("@id_penerima", (cbPenerima.SelectedItem as ComboboxItem).Value.ToString());
                 cmd.Parameters.AddWithValue("@id_pengirim", (cbPengirim.SelectedItem as ComboboxItem).Value.ToString());
                 cmd.Parameters.AddWithValue("@id_kurir", (cbKurir.SelectedItem as ComboboxItem).Value.ToString());
+                cmd.Parameters.AddWithValue("@id_barang", (cbBarang.SelectedItem as ComboboxItem).Value.ToString());
                 cmd.Parameters.AddWithValue("@kategori", rbExpress.Checked ? rbExpress.Text : rbRegular.Text);
                 cmd.Parameters.AddWithValue("@total", tbTotal.Text);
 

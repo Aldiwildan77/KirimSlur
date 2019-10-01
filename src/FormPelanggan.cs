@@ -20,6 +20,7 @@ namespace src
         public FormPelanggan()
         {
             InitializeComponent();
+            
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
@@ -132,12 +133,6 @@ namespace src
             }
             reader.Close();
         }
-        private void FormBarang_Load(object sender, EventArgs e)
-        {
-            databaseConnection.Open();
-            refresh();
-            databaseConnection.Close();
-        }
 
         private void listPelanggan_MouseClick(object sender, MouseEventArgs e)
         {
@@ -147,6 +142,13 @@ namespace src
             tbKota.Text = listPelanggan.Items[listPelanggan.FocusedItem.Index].SubItems[3].Text;
             tbKodePos.Text = listPelanggan.Items[listPelanggan.FocusedItem.Index].SubItems[4].Text;
             tbTelp.Text = listPelanggan.Items[listPelanggan.FocusedItem.Index].SubItems[5].Text;
+        }
+
+        private void FormPelanggan_Load(object sender, EventArgs e)
+        {
+            databaseConnection.Open();
+            refresh();
+            databaseConnection.Close();
         }
     }
 }

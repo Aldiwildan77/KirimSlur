@@ -51,7 +51,7 @@ namespace src
         }
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE kurir SET nama = @nama, no_ktp=@no_ktp, no_telp= @no_telp WHERE id = @id";
+            string query = "UPDATE kurir SET nama = @nama, no_telp= @no_telp WHERE no_ktp = @no_ktp";
             try
             {
                 // Open the database
@@ -78,14 +78,14 @@ namespace src
 
         private void BtnHapus_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM kurir WHERE id = @id";
+            string query = "DELETE FROM kurir WHERE no_ktp = @no_ktp";
             try
             {
                 // Open the database
                 databaseConnection.Open();
                 MySqlCommand cmd = new MySqlCommand(query, databaseConnection);
                 cmd.CommandTimeout = 60;
-                //cmd.Parameters.AddWithValue("@id", text_id.Text);
+                cmd.Parameters.AddWithValue("@no_ktp", tbNoKTP.Text);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Data berhasil dihapus");
             }
