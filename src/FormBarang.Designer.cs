@@ -51,7 +51,7 @@
             this.btnHapus.Location = new System.Drawing.Point(333, 315);
             this.btnHapus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(112, 46);
+            this.btnHapus.Size = new System.Drawing.Size(136, 46);
             this.btnHapus.TabIndex = 19;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = true;
@@ -62,7 +62,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(189, 315);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(112, 46);
+            this.btnUpdate.Size = new System.Drawing.Size(136, 46);
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -73,7 +73,7 @@
             this.btnTambah.Location = new System.Drawing.Point(51, 315);
             this.btnTambah.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(112, 46);
+            this.btnTambah.Size = new System.Drawing.Size(130, 46);
             this.btnTambah.TabIndex = 17;
             this.btnTambah.Text = "Tambah";
             this.btnTambah.UseVisualStyleBackColor = true;
