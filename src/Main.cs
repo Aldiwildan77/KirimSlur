@@ -40,9 +40,6 @@ namespace src
 
             Fkur = new FormKurir();
             Fkur.MdiParent = this;
-
-            Fstat = new FormStatusPengiriman();
-            Fstat.MdiParent = this;
         }
 
         private void pelangganToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,9 +97,6 @@ namespace src
                 return;
             }
 
-            Fstat = new FormStatusPengiriman();
-            Fstat.MdiParent = this;
-            Fstat.Show();
         }
     }
 }

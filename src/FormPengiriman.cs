@@ -276,42 +276,11 @@ namespace src
             refresh();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnStatus_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE invoice SET tanggal = @tanggal, " +
-                "id_pengirim = @id_pengirim, id_penerima = @id_penerima, " +
-                "id_barang = @id_barang, id_kurir = @id_kurir, kategori = @kategori, " +
-                "total = @total WHERE no_resi = @no_resi";
-
-            try
-            {
-                databaseConnection.Open();
-
-                MySqlCommand cmd = new MySqlCommand(query, databaseConnection);
-                cmd.CommandTimeout = 60;
-
-                cmd.Parameters.AddWithValue("@no_resi", no_resi.Text);
-                cmd.Parameters.AddWithValue("@tanggal", dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture));
-                cmd.Parameters.AddWithValue("@id_penerima", (cbPenerima.SelectedItem as ComboboxItem).Value.ToString());
-                cmd.Parameters.AddWithValue("@id_pengirim", (cbPengirim.SelectedItem as ComboboxItem).Value.ToString());
-                cmd.Parameters.AddWithValue("@id_kurir", (cbKurir.SelectedItem as ComboboxItem).Value.ToString());
-                cmd.Parameters.AddWithValue("@id_barang", (cbBarang.SelectedItem as ComboboxItem).Value.ToString());
-                cmd.Parameters.AddWithValue("@kategori", rbExpress.Checked ? rbExpress.Text : rbRegular.Text);
-                cmd.Parameters.AddWithValue("@total", tbTotal.Text);
-
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Data berhasil diupdate");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                databaseConnection.Close();
-            }
-
-            refresh();
+            String noresi = no_resi.Text;
+            FormStatusPengiriman openstatus = new FormStatusPengiriman(noresi);
+            openstatus.Show();
         }
 
         private void refresh()
@@ -367,5 +336,42 @@ namespace src
             }
         }
 
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE invoice SET tanggal = @tanggal, " +
+                "id_pengirim = @id_pengirim, id_penerima = @id_penerima, " +
+                "id_barang = @id_barang, id_kurir = @id_kurir, kategori = @kategori, " +
+                "total = @total WHERE no_resi = @no_resi";
+
+            try
+            {
+                databaseConnection.Open();
+
+                MySqlCommand cmd = new MySqlCommand(query, databaseConnection);
+                cmd.CommandTimeout = 60;
+
+                cmd.Parameters.AddWithValue("@no_resi", no_resi.Text);
+                cmd.Parameters.AddWithValue("@tanggal", dtTanggal.Value.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture));
+                cmd.Parameters.AddWithValue("@id_penerima", (cbPenerima.SelectedItem as ComboboxItem).Value.ToString());
+                cmd.Parameters.AddWithValue("@id_pengirim", (cbPengirim.SelectedItem as ComboboxItem).Value.ToString());
+                cmd.Parameters.AddWithValue("@id_kurir", (cbKurir.SelectedItem as ComboboxItem).Value.ToString());
+                cmd.Parameters.AddWithValue("@id_barang", (cbBarang.SelectedItem as ComboboxItem).Value.ToString());
+                cmd.Parameters.AddWithValue("@kategori", rbExpress.Checked ? rbExpress.Text : rbRegular.Text);
+                cmd.Parameters.AddWithValue("@total", tbTotal.Text);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Data berhasil diupdate");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                databaseConnection.Close();
+            }
+
+            refresh();
+        }
     }
 }
