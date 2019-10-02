@@ -81,58 +81,83 @@ namespace src
             string query = "DELETE FROM kurir WHERE no_ktp = @no_ktp";
             try
             {
-                // Open the database
                 databaseConnection.Open();
+
                 MySqlCommand cmd = new MySqlCommand(query, databaseConnection);
                 cmd.CommandTimeout = 60;
                 cmd.Parameters.AddWithValue("@no_ktp", tbNoKTP.Text);
-                cmd.ExecuteNonQuery();
+
+                cmd.BeginExecuteNonQuery();
                 MessageBox.Show("Data berhasil dihapus");
             }
             catch (Exception ex)
             {
-                // Show any error message.
                 MessageBox.Show(ex.Message);
             }
             finally
             {
-                refresh();
                 databaseConnection.Close();
             }
+            refresh();
         }
 
         private void refresh()
         {
             listKurir.Items.Clear();
+
             string query = "SELECT * FROM kurir";
-            MySqlCommand cmd = new MySqlCommand(query, databaseConnection);
-            cmd.CommandTimeout = 60;
-            MySqlDataReader reader = cmd.ExecuteReader();
-            // IMPORTANT :
-            // If your query returns result, use the following processor :
-            if (reader.HasRows)
+
+            try
             {
-                while (reader.Read())
+                databaseConnection.Open();
+
+                MySqlCommand cmd = new MySqlCommand(query, databaseConnection);
+                cmd.CommandTimeout = 60;
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                    ListViewItem listViewItem = new
-                    ListViewItem(reader["id"].ToString());
-                    listViewItem.SubItems.Add(reader["nama"].ToString());
-                    listViewItem.SubItems.Add(reader["no_ktp"].ToString());
-                    listViewItem.SubItems.Add(reader["no_telp"].ToString());
-                    listKurir.Items.Add(listViewItem);
+                    while (reader.Read())
+                    {
+                        ListViewItem listViewItem = new ListViewItem(reader["id"].ToString());
+                        listViewItem.SubItems.Add(reader["nama"].ToString());
+                        listViewItem.SubItems.Add(reader["no_ktp"].ToString());
+                        listViewItem.SubItems.Add(reader["no_telp"].ToString());
+
+                        listKurir.Items.Add(listViewItem);
+                    }
+
+                    reader.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No rows found.");
                 }
             }
-            reader.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                databaseConnection.Close();
+            }
         }
 
         private void FormKurir_Load(object sender, EventArgs e)
         {
-            databaseConnection.Open();
             refresh();
-            databaseConnection.Close();
         }
 
         private void ListKurir_MouseClick(object sender, MouseEventArgs e)
+        {
+            tbNama.Text = listKurir.Items[listKurir.FocusedItem.Index].SubItems[0].Text;
+            tbNoKTP.Text = listKurir.Items[listKurir.FocusedItem.Index].SubItems[1].Text;
+            tbTelp.Text = listKurir.Items[listKurir.FocusedItem.Index].SubItems[2].Text;
+        }
+
+        private void listKurir_MouseClick(object sender, MouseEventArgs e)
         {
             tbNama.Text = listKurir.Items[listKurir.FocusedItem.Index].SubItems[0].Text;
             tbNoKTP.Text = listKurir.Items[listKurir.FocusedItem.Index].SubItems[1].Text;

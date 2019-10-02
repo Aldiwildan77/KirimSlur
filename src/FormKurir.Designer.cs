@@ -103,6 +103,7 @@
             this.listKurir.TabIndex = 6;
             this.listKurir.UseCompatibleStateImageBehavior = false;
             this.listKurir.View = System.Windows.Forms.View.Details;
+            this.listKurir.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listKurir_MouseClick);
             // 
             // columnHeader1
             // 
