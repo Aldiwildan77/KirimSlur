@@ -13,8 +13,7 @@ namespace src
 {
     public partial class FormKurir : Form
     {
-        private static string connectionString =
-"server=localhost;port=3306;username=root;password=;database=kirimslur;";
+        private static string connectionString ="server=localhost;port=3306;username=root;password=;database=kirimslur;";
         private MySqlConnection databaseConnection = new MySqlConnection(connectionString);
 
         public FormKurir()
@@ -45,9 +44,10 @@ namespace src
             }
             finally
             {
-                refresh();
+                
                 databaseConnection.Close();
             }
+            refresh();
         }
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
@@ -71,9 +71,9 @@ namespace src
             }
             finally
             {
-                refresh();
                 databaseConnection.Close();
             }
+            refresh();
         }
 
         private void BtnHapus_Click(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace src
         {
             listKurir.Items.Clear();
 
-            string query = "SELECT * FROM kurir";
+            string query = "SELECT id,nama,no_ktp,no_telp FROM kurir";
 
             try
             {
@@ -159,9 +159,9 @@ namespace src
 
         private void listKurir_MouseClick(object sender, MouseEventArgs e)
         {
-            tbNama.Text = listKurir.Items[listKurir.FocusedItem.Index].SubItems[0].Text;
-            tbNoKTP.Text = listKurir.Items[listKurir.FocusedItem.Index].SubItems[1].Text;
-            tbTelp.Text = listKurir.Items[listKurir.FocusedItem.Index].SubItems[2].Text;
+            tbNama.Text = listKurir.Items[listKurir.FocusedItem.Index].SubItems[1].Text;
+            tbNoKTP.Text = listKurir.Items[listKurir.FocusedItem.Index].SubItems[2].Text;
+            tbTelp.Text = listKurir.Items[listKurir.FocusedItem.Index].SubItems[3].Text;
         }
     }
 }

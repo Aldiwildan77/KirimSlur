@@ -41,6 +41,7 @@
             this.btnTambah = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnHapus = new System.Windows.Forms.Button();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lbNama
@@ -94,6 +95,7 @@
             // listKurir
             // 
             this.listKurir.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
@@ -108,17 +110,17 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Nama";
-            this.columnHeader1.Width = 146;
+            this.columnHeader1.Width = 91;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "No. KTP";
-            this.columnHeader2.Width = 153;
+            this.columnHeader2.Width = 66;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Telp";
-            this.columnHeader3.Width = 132;
+            this.columnHeader3.Width = 76;
             // 
             // btnTambah
             // 
@@ -149,6 +151,11 @@
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = true;
             this.btnHapus.Click += new System.EventHandler(this.BtnHapus_Click);
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "ID";
+            this.columnHeader4.Width = 51;
             // 
             // FormKurir
             // 
@@ -189,5 +196,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
